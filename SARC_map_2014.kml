@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>SARC Map 2014</name>
+    <description>Sexual Assault Referral Centres in the UK</description>
+    <Style id="icon-22-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-22-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-22">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-22-nodesc-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-22-nodesc-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-22-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name><![CDATA[Avon & Somerset]]></name>
+        <description><![CDATA[The Bridge<br>2nd Floor<br>Central health Clinic<br>Tower Hill<br>Bristol<br>BS2 0JD]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.582666,51.45743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bedfordshire</name>
+        <description><![CDATA[The Emerald Centre SARC<br>Bedford Health Village<br>The Enhanced Services Centre<br>3 Kimbolton Road<br>Bedford<br>MK40 2NT]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.469089,52.135595,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cambridgeshire</name>
+        <description><![CDATA[OASIS@ Rivergate<br>Viersen Platz<br>Peterborough<br>PE1 1SE]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.239172,52.568838,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Cleveland & Teeside]]></name>
+        <description><![CDATA[Helen Britton House<br>13 Trinity Mews<br>North Ormesby<br>Health Village<br>Middlesbrough <br>TS3 6AL]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.236841,54.575246,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cornwall</name>
+        <description><![CDATA[The Willow Centre<br>Truro Health Park<br>Infirmary Hill<br>Truro<br>TR1 2JA]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -5.049097,50.264765,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Derbyshire</name>
+        <description><![CDATA[Millfield House<br>PO Box 6960<br>Ripley<br>Derbys<br>DE5 4AF]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.407843,53.054422,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Devon & Torbay]]></name>
+        <description><![CDATA[The Oak Centre<br>Hawkins House<br>Pynes Hill<br>Rydon Lane<br>Exeter<br>EX2 5SS]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.532983,50.722547,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dorset</name>
+        <description><![CDATA[Dorset SARC<br>Twelve’s Company<br>5 Madeira Road<br>Bournemouth<br>Dorset<br>BH1 1QQ<br> <br>T:       01202 552056<br>F:       01202 552056<br>E:       dorsetsarc@twelvescompany.co.uk<br>W:      www.twelvescompany.co.uk (http://www.twelvescompany.co.uk/)]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.879541,50.719069,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Durham</name>
+        <description><![CDATA[The Meadows<br>John Street North<br>Meadowfield<br>Durham<br>DH7 8RS]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.58291,54.775346,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Essex</name>
+        <description><![CDATA[Oakwood Place<br>Brentwood Community Hospital<br>Crescent Drive<br>Brentwood<br>Essex]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            0.304431,51.619722,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gloucestershire</name>
+        <description><![CDATA[Hope House<br>Gloucestershire Royal Hospital<br>Great Western Road<br>Gloucester<br>GL1 3NN]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.236597,51.859532,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Hampshire & Isle of Wight]]></name>
+        <description><![CDATA[The Treetops Centre<br>Northern Road<br>Cosham<br>Portsmouth<br>PO6 3EP]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.077539,50.819818,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hertfordshire</name>
+        <description><![CDATA[Sunflower SARC<br>98 Cotterells<br>Hemel Hempstead<br>Herts<br>HP1 1JQ]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.445166,51.75339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Humberside & North Lincs]]></name>
+        <description><![CDATA[CASA Suite<br>810a Hessle Road<br>Hull<br>HU4 6RD]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.335522,53.750335,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Lancashire & Preston]]></name>
+        <description><![CDATA[The SAFE Centre<br>Royal Preston Hospital<br>Sharoe Green Lane<br>Fulwood<br>Preston<br>PR2 8HT]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.703516,53.764949,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leicestershire</name>
+        <description><![CDATA[Juniper Lodge<br>Lodge One<br>Leicestershire General Hospital <br>Gwendolen Road<br>Leicester<br>LE5 4PW]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.132471,52.643063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lincolnshire</name>
+        <description><![CDATA[Spring Lodge<br>12 Dean Road<br>Lincoln<br>LN2 4DR]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.544702,53.232345,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>London, west</name>
+        <description><![CDATA[Near to St. Mary's Hospital<br>W2 1NY]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.173702,51.516888,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>London, east</name>
+        <description><![CDATA[Whitechapel Haven in east London<br>E1 5BD]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.058647,51.52012,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Manchester</name>
+        <description><![CDATA[St Mary’s Centre<br>St. Mary’s Hospital <br>Oxford Road <br>Manchester<br>M13 9WL]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.253076,53.481508,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Merseyside</name>
+        <description><![CDATA[SAFE Place – Merseyside<br>6th Floor, Citrus House<br>40-46 Dale Street<br>Liverpool<br>L2 5SF]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.994653,53.409532,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Norfolk</name>
+        <description><![CDATA[The Harbour Centre<br>267a Reepham Road<br>Norwich<br>Norfolk <br>NR6 5QH]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            1.290015,52.633063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Northamptonshire</name>
+        <description><![CDATA[SERENITY<br>Highfield Clinical Care Centre<br>Cliftonville Road<br>Northampton<br>NN1 5DN]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.901758,52.241256,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Northumabria, Newcastle Upon Tyne & Sunderland]]></name>
+        <description><![CDATA[REACH – The Rhona Cross Suite<br>New Croft House<br>Market Street<br>Newcastle upon Tyne<br>NE1 6ND<br><br>REACH – Ellis Fraser Centre<br>Sunderland Royal Hospital<br>Kayll Road<br>Sunderland<br>SR4 7TP]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.621362,54.983918,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nottinghamshire</name>
+        <description><![CDATA[The Topaz Centre<br>PO Box 9262<br>Nottingham North <br>Nottinghamshire<br>NG5 0DW]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.16543,52.955257,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Plymouth</name>
+        <description><![CDATA[Twelves Company<br>37 The Millfields<br>Plymouth<br>PL1 3JB]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -4.148218,50.376999,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Staffordshire & Stoke On Trent]]></name>
+        <description><![CDATA[Cobridge Health Centre <br>Church Terrace<br>Cobridge<br>Stoke-on-Trent<br>Staffordshire<br>ST6 2JU]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.181665,53.001562,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Suffolk</name>
+        <description><![CDATA[The Ferns<br>Unit 10 & 10A<br>Delta Terrace<br>West Road<br>Ransomes Europark<br>Ipswich]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            1.147192,52.062623,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Surrey</name>
+        <description><![CDATA[The Solace Centre<br>Cobham Community Hospital<br>168 Portsmouth Road<br>Cobham<br>Surrey<br>KT11 1HS]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.412784,51.328895,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sussex</name>
+        <description><![CDATA[The Saturn Centre<br>Crawley Hospital<br>West Green Drive<br>Crawley<br>West Sussex<br>RH11 7DH]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.189734,51.108696,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Thames Valley</name>
+        <description><![CDATA[The Solace Centre<br>Upton Hospital<br>Church Street<br>Slough<br>SL1 2BJ]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.594141,51.508742,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Mercia</name>
+        <description><![CDATA[The Glade<br>Bransford<br>Worcestershire<br>WR6 5JD]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.299287,52.171826,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Midlands</name>
+        <description><![CDATA[Horizon SARC<br>2 Ida Road<br>Walsall<br>West Midlands<br>WS2 9SR]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.985999,52.585529,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wiltshire</name>
+        <description><![CDATA[Swindon and Wiltshire SARC<br>The Gables<br>Shrivenham Road<br>South Marston<br>Swindon<br>SN3 4RB]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.786157,51.556582,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>South Yorkshire</name>
+        <description><![CDATA[The Isis and the Artemis<br>Sexual Assault Referral Centre<br>Rotherham NHS Foundation Trust<br>Rotherham General Hospital<br>Moorgate Road<br>Rotherham <br>S60 2UD]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.363184,53.432447,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Yorkshire</name>
+        <description><![CDATA[Bridge House<br>48 Bridge Road<br>Bishopthorpe<br>York<br>YO21 1RR]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -1.088525,53.965781,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cardiff, South Wales</name>
+        <description><![CDATA[Safe Island/Ynys Saff<br>Newport Road<br>Cardiff<br>CF24 0SJ]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.181421,51.481383,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dyfed Powys, West Wles</name>
+        <description><![CDATA[New Pathways<br>Elm Tree House<br>West Wales General Hospital<br>Carmarthern<br>Dyfed<br>West Wales<br>S431 2AF]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -4.309497,51.855291,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gwent, South Wales</name>
+        <description><![CDATA[New Pathways<br>Laburnum House<br>Tredegar Street<br>Risca<br>Gwent<br>NP11 6BU]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.102484,51.613753,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Merthyr Tydfil, South wales</name>
+        <description><![CDATA[New Pathways<br>Willow House<br>57-58 Lower Thomas Street<br>Merthyr Tydfil<br>CF47 0DA]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.388129,51.75339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Swansea, South Wales</name>
+        <description><![CDATA[New Pathways<br>Beech Tree Centre<br>Swansea<br>Hendresoilan]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.950464,51.628248,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Wales</name>
+        <description><![CDATA[Amethyst<br>1, Bryn Eirias Close<br>Off Elian Road<br>Colwyn Bay<br>LL29 8AB]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -3.725244,53.291489,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glasgow, Scotland</name>
+        <description><![CDATA[Archway<br>6 Sandyford Place<br>Glasgow <br>G3 7NB]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -4.258081,55.866065,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Northern Ireland</name>
+        <description><![CDATA[The Rowan<br>Sexual Assault Referral Centre for NI<br>Antrim Area Hospital site<br>Bush Road<br>Antrim<br>BT41 2RL<br> <br>02894 424340<br>www.therowan.net (http://www.therowan.net/)]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -6.207715,54.713515,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cumbria</name>
+        <description><![CDATA[The Bridgeway<br>2 Tynefield Drive<br>Penrith<br>Cumbria<br>CA11 8JA]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -2.74364530000003,54.6577642,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kent</name>
+        <description><![CDATA[Beech House<br>Unit 7 and 8, North Court, South Park Business Village, Armstrong Road, Maidstone Kent<br>ME15 6JZ]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            0.5257902,51.2611789,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>London, south</name>
+        <description><![CDATA[Camberwell Haven in south London<br>Nr to King's College Hospital<br>SE5 9RS]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <Point>
+          <coordinates>
+            -0.0926798,51.4673971,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Warwickshire</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -1.47322029999998,52.5119597,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
