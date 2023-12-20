@@ -1,0 +1,75 @@
+---
+title: "SARCs and Annual Crime Data"
+author: "Natalie J. Reyes"
+date: "2023-12-11"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# SARCs versus Rape Crisis Centres
+
+A few lines on what SARCs are and how they differ from Rape Crisis Centres.
+
+1. SARC | Sexual Assault Referral Centres
+
+These centres are funded and run by the National Health Service (NHS). This means that they are part of the public healthcare system in the UK.
+
+Scope: They are primarily focused on providing immediate medical care, including forensic examinations, and support in the aftermath of a sexual assault. They also offer emergency contraception and sexual health advice.
+
+Support with police reporting: They offer assistance in reporting sexual assault to the police, including the option to store forensic evidene while the individual decides whether to report.
+
+2. Rape Crisis Centres
+
+These centres are typically run as charitable organizations. They operate under umbrella organizations like Rape Crisis England and Rape Crisis Scotland.
+
+Scope: They provide a broader range of services including crisis support, advocacy, and long-term psychological support to survivors of all forms of sexual violence and abuse. They do not typically offer medical services.
+
+Support with police reporting: While they may assist with the process, their primary focus is not on facilitating police reporting or evidence collection.
+
+# Map of SARCs & Police Stations
+
+A map of all the SARCs (points) with the police station boundaries (polygons) you found. Please have a colour gradient where the stations polygons with the higher crime levels are shaded in a darker colour, like a heat map.
+
+```{r map-of-sarcs}
+# Load necessary libraries
+library(sf)
+library(ggplot2)
+
+# Read the SARC KML file and UK shape data
+SARC_map <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/SARC_map_2014.kml")
+UK_shape_data1 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm0.shp")
+UK_shape_data2 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm1.shp")
+UK_shape_data3 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm2.shp")
+
+
+
+# Plotting onto one map
+UK_map <- ggplot() +
+  geom_sf(data = UK_shape_data1, fill = 'blue', color = 'black') +
+  geom_sf(data = UK_shape_data2, fill = 'green', color = 'black') +
+  geom_sf(data = UK_shape_data3, fill = 'yellow', color = 'black') +
+  theme_minimal()
+
+# Overlay the SARC coordinates
+map_with_SARCs <- UK_map +
+  geom_sf(data = SARC_map, fill = 'red', color = 'red', alpha = 0.5)
+
+print(map_with_SARCs)
+
+# Save the map
+ggsave("C:/Users/natal/Desktop/GitHub/SARC_research/SARCmap.png", map_with_SARCs, width = 10, height = 8, units = "in", dpi = 300)
+
+
+{r map-of-sarcs}```
+
+# Map of Neighborhood Level Crime Rates
+
+Another map of neighbourhood level crime rates per 100,000 for say 2018. To compute crime rate, you will have to divide the number of crimes in the neighbourhood by the neighbourhood population, and multiply by 100,000. To get population, you can either use census data (if it's available at the neighbourhood level) or use WorldPop data...
+
+# Summary Statistics
+
+The summary statistics you computed, but with crime rates rather than levels...
