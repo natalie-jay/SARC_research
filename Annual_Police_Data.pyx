@@ -84,28 +84,7 @@ def create_police_df_for_year(year, root_directory):
 
     return police_df
 
-'''
-def create_police_df_for_year(year, root_directory):
 
-    # Initialize the DataFrame with specified columns
-    police_df = pd.DataFrame(columns=['Month', 'Police Force', 'Crime type'])
-
-    # Iterate through all items in the root directory
-    for item in os.listdir(root_directory):
-        # Check if the item is a directory and contains the specified year
-        if os.path.isdir(os.path.join(root_directory, item)) and str(year) in item:
-            # Iterate through each file in the directory
-            for file in os.listdir(os.path.join(root_directory, item)):
-                # Check if the file ends with '-street.csv'
-                if file.endswith('-street.csv'):
-                    file_path = os.path.join(root_directory, item, file)
-                    # Read only the specified columns from the CSV file
-                    df = pd.read_csv(file_path, usecols=['Month', 'Police Force', 'Crime type'])
-                    # Append it to the police_df DataFrame
-                    police_df = police_df.append(df, ignore_index=True)
-
-    return police_df
-'''
 police_df_2012 = create_police_df_for_year(2012, root_directory)
 police_df_2013 = create_police_df_for_year(2013, root_directory)
 police_df_2014 = create_police_df_for_year(2014, root_directory)
