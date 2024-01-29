@@ -39,37 +39,31 @@ A map of all the SARCs (points) with the police station boundaries (polygons) yo
 library(sf)
 library(ggplot2)
 
-# Read the SARC KML file and UK shape data
-SARC_map <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/SARC_map_2014.kml")
-UK_shape_data1 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm0.shp")
-UK_shape_data2 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm1.shp")
-UK_shape_data3 <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/GBR_adm2.shp")
-
-
-
-# Plotting onto one map
-UK_map <- ggplot() +
-  geom_sf(data = UK_shape_data1, fill = 'blue', color = 'black') +
-  geom_sf(data = UK_shape_data2, fill = 'green', color = 'black') +
-  geom_sf(data = UK_shape_data3, fill = 'yellow', color = 'black') +
-  theme_minimal()
-
-# Overlay the SARC coordinates
-map_with_SARCs <- UK_map +
-  geom_sf(data = SARC_map, fill = 'red', color = 'red', alpha = 0.5)
-
-print(map_with_SARCs)
-
-# Save the map
-ggsave("C:/Users/natal/Desktop/GitHub/SARC_research/SARCmap.png", map_with_SARCs, width = 10, height = 8, units = "in", dpi = 300)
-
-
-{r map-of-sarcs}```
+source("C:/Users/natal/Desktop/GitHub/SARC_research/SARCmap.R")
 
 # Map of Neighborhood Level Crime Rates
 
-Another map of neighbourhood level crime rates per 100,000 for say 2018. To compute crime rate, you will have to divide the number of crimes in the neighbourhood by the neighbourhood population, and multiply by 100,000. To get population, you can either use census data (if it's available at the neighbourhood level) or use WorldPop data...
+#Another map of neighbourhood level crime rates per 100,000 for say 2018. To compute crime rate, you will have to divide #the number of crimes in the neighbourhood by the neighbourhood population, and multiply by 100,000. To get population, #you can either use census data (if it's available at the neighbourhood level) or use WorldPop data...
 
-# Summary Statistics
+print(map_With_overlays)
 
-The summary statistics you computed, but with crime rates rather than levels...
+```
+
+
+```{r summary-stats}
+
+# Annual Crime Rates (per 100,000)
+
+library(ggplot2)
+source("C:/Users/natal/Desktop/GitHub/SARC_research/Annual_Police_Data.R")
+
+
+ggplot(monthly_rates_df, aes(x = Year, y = TotalCrimeRate)) +
+  geom_line() + # Line plot
+  geom_point() + # Add points
+  labs(title = "Total Crime Rate Over the Years",
+       x = "Year",
+       y = "Crime Rate per 100,000") +
+  theme_minimal() # A minimalistic theme
+
+

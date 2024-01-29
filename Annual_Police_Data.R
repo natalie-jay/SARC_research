@@ -100,27 +100,27 @@ police_df_list <- list(
 )
 
 # Unique values for each year
-print_unique_values(2012, dataframes)
-print_unique_values(2013, dataframes)
-print_unique_values(2014, dataframes)
-print_unique_values(2015, dataframes)
-print_unique_values(2016, dataframes)
-print_unique_values(2017, dataframes)
-print_unique_values(2018, dataframes)
-print_unique_values(2019, dataframes)
-print_unique_values(2020, dataframes)
-print_unique_values(2021, dataframes)
-print_unique_values(2022, dataframes)
+print_unique_values(2012, police_df_list)
+print_unique_values(2013, police_df_list)
+print_unique_values(2014, police_df_list)
+print_unique_values(2015, police_df_list)
+print_unique_values(2016, police_df_list)
+print_unique_values(2017, police_df_list)
+print_unique_values(2018, police_df_list)
+print_unique_values(2019, police_df_list)
+print_unique_values(2020, police_df_list)
+print_unique_values(2021, police_df_list)
+print_unique_values(2022, police_df_list)
 
 ## POPULATION 
 
 # Define the police forces and their populations
 police_force <- c("Avon and Somerset Constabulary", "Bedfordshire Police", "British Transport Police",
-                  "Cambridegeshire Constabulary", "Cheshire Constabulary", "City of London Police",
-                  "Cleveland Police", "Cumbria Constabulary", "Derbyshire Police", "Devon and Cornwall Police",
+                  "Cambridgeshire Constabulary", "Cheshire Constabulary", "City of London Police",
+                  "Cleveland Police", "Cumbria Constabulary", "Derbyshire Constabulary", "Devon & Cornwall Police",
                   "Dorset Police", "Durham Constabulary", "Dyfed-Powys Police", "Essex Police",
-                  "Gloucestershire Police", "Greater Manchester Police", "Gwent Police", "Hampshire Police",
-                  "Hertfordshire Police", "Humberside Police", "Kent Police", "Lancashire Constabulary",
+                  "Gloucestershire Constabulary", "Greater Manchester Police", "Gwent Police", "Hampshire Constabulary",
+                  "Hertfordshire Constabulary", "Humberside Police", "Kent Police", "Lancashire Constabulary",
                   "Leicestershire Police", "Lincolnshire Police", "Merseyside Police", "Metropolitan Police Service",
                   "Norfolk Constabulary", "North Wales Police", "North Yorkshire Police", "Northamptonshire Police",
                   "Northumbria Police", "Nottinghamshire Police", "Police Service of Northern Ireland",
@@ -135,13 +135,13 @@ population_served <- c(1650000, 664500, NA, 800000, 1070000, 431000, 570000, 498
                        584000, 1300000, 2940000, 2350000, 727000)
 
 # Create the data frame
-police_region_pop_df <- data.frame(Police_Force = police_force, Population_Served = population_served)
+police_region_pop_df <- data.frame(police_force = police_force, population_served = population_served)
 
 # Calculate the total population (excluding NA values)
-total_population <- sum(police_region_pop_df$Population_Served, na.rm = TRUE)
+total_population <- sum(police_region_pop_df$population_served, na.rm = TRUE)
 
 # Add a new row for the total
-total_row <- data.frame(Police_Force = "Total", Population_Served = total_population)
+total_row <- data.frame(police_force = "Total", population_served = total_population)
 
 # Combine the original data frame with the new row
 police_region_pop_df <- rbind(police_region_pop_df, total_row)
@@ -184,17 +184,18 @@ process_year <- function(df, year, population_served) {
 }
 
 # Get the population served from the police_region_pop_df
-population_served <- police_region_pop_df$Population_Served[46] 
+population_served <- police_region_pop_df$population_served[46] 
 
-# Initialize an empty DataFrame to store the counts for each year
-monthly_counts_df <- data.frame(Year = integer(), January = integer(), February = integer(), 
-                                March = integer(), April = integer(), May = integer(), 
-                                June = integer(), July = integer(), August = integer(), 
-                                September = integer(), October = integer(), November = integer(), 
-                                December = integer(), stringsAsFactors = FALSE)
+# Adjust the data frame structure to include 'Total Counts' and 'Total Crime Rate'
+monthly_rates_df <- data.frame(Year = integer(), January = integer(), February = integer(), 
+                               March = integer(), April = integer(), May = integer(), 
+                               June = integer(), July = integer(), August = integer(), 
+                               September = integer(), October = integer(), November = integer(), 
+                               December = integer(), TotalCounts = integer(), TotalCrimeRate = double(), 
+                               stringsAsFactors = FALSE)
 
 # Loop to process each year
-for (year in 2013:2022) {
+for (year in 2014:2022) {
   # Retrieve the data frame for the year from the list
   if (!is.null(police_df_list[[as.character(year)]])) {
     yearly_df <- police_df_list[[as.character(year)]]
@@ -202,12 +203,46 @@ for (year in 2013:2022) {
     # Process the data for the year using the 'process_year' function
     new_row <- process_year(yearly_df, year, population_served)
     
-    # Append the new row to the monthly_counts_df data frame
-    monthly_counts_df <- rbind(monthly_counts_df, new_row)
+    # Calculate the total counts for the year
+    total_counts <- sum(new_row[2:13], na.rm = TRUE) # Sum of crimes
+    new_row$TotalCounts <- total_counts
+    
+    # Calculate the total crime rate for the year
+    new_row$TotalCrimeRate <- (total_counts / population_served) * 100000 # Crime rate per 100,000 people
+    
+    # Append the new row to the monthly_rates_df data frame
+    monthly_rates_df <- rbind(monthly_rates_df, new_row)
   }
 }
 
 # Display the updated data frame
-print(monthly_counts_df)
+print(monthly_rates_df)
 
 
+####
+
+# Filtering for 'Violence and sexual offences' in the 2022 data
+violence_df_2022 <- police_df_2022 %>%
+  filter(`Crime.type` == 'Violence and sexual offences')
+
+# Summing the number of crimes per police force
+crime_counts_2022 <- violence_df_2022 %>%
+  group_by(`Falls.within`) %>%
+  summarise(Total_Crimes = n(), .groups = 'drop')
+
+# Renaming 'Falls.within' to 'police_force' for merging
+colnames(crime_counts_2022)[which(names(crime_counts_2022) == "Falls.within")] <- "police_force"
+
+# Merging with the population data
+crime_rates_2022 <- merge(crime_counts_2022, police_region_pop_df, by = "police_force")
+
+# Calculating the crime rate per 100,000 population
+crime_rates_2022 <- crime_rates_2022 %>%
+  mutate(Crime_Rate_per_100k = (Total_Crimes / population_served) * 100000)
+
+# Select only the relevant columns to display
+crime_rates_2022 <- crime_rates_2022 %>%
+  select(police_force, Total_Crimes, Crime_Rate_per_100k)
+
+# Display the results
+print(crime_rates_2022)

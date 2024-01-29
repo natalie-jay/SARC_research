@@ -19,6 +19,10 @@ library(ggplot2)
 # Main SARC KML file
 SARC_map <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/UK_shape_data/SARC_map_2014.kml")
 
+# 2022 crime rates according to police force (Variable = crime_rates_2022)
+#source("C:/Users/natal/Desktop/GitHub/SARC_research/Annual_Police_Data.R")
+#head(crime_rates_2022)
+
 # Read UK shape data 
 UK_shape_data1 <- shape_data <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/UK_shape_data/GBR_adm0.shp")
 UK_shape_data2 <- shape_data <- st_read("C:/Users/natal/Desktop/GitHub/SARC_research/UK_shape_data/GBR_adm1.shp")
