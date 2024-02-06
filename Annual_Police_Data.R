@@ -14,6 +14,9 @@ library(tidyr)
 base_path <- "C:/Users/natal/Desktop/GitHub/SARC_research"
 root_directory <- file.path(base_path, "Police_Data")
 
+if (FALSE) {
+# The following code block will not be executed as CSV files now exist  
+  
 ## Function to loop through the folders and create dataframes according to year
 create_police_df_for_year <- function(year, root_directory) {
   # Initialize the DataFrame with specified columns
@@ -62,6 +65,35 @@ police_df_2019 <- create_police_df_for_year(2019, root_directory)
 police_df_2020 <- create_police_df_for_year(2020, root_directory)
 police_df_2021 <- create_police_df_for_year(2021, root_directory)
 police_df_2022 <- create_police_df_for_year(2022, root_directory)
+
+write.csv(police_df_2011, "police_df_2011.csv")
+write.csv(police_df_2012, "police_df_2012.csv")
+write.csv(police_df_2013, "police_df_2013.csv")
+write.csv(police_df_2014, "police_df_2014.csv")
+write.csv(police_df_2015, "police_df_2015.csv")
+write.csv(police_df_2016, "police_df_2016.csv")
+write.csv(police_df_2017, "police_df_2017.csv")
+write.csv(police_df_2018, "police_df_2018.csv")
+write.csv(police_df_2019, "police_df_2019.csv")
+write.csv(police_df_2020, "police_df_2020.csv")
+write.csv(police_df_2021, "police_df_2021.csv")
+write.csv(police_df_2022, "police_df_2022.csv")
+
+# The code block ends here
+}
+
+police_df_2011 <- read.csv("police_df_2011.csv")
+police_df_2012 <- read.csv("police_df_2012.csv")
+police_df_2013 <- read.csv("police_df_2013.csv")
+police_df_2014 <- read.csv("police_df_2014.csv")
+police_df_2015 <- read.csv("police_df_2015.csv")
+police_df_2016 <- read.csv("police_df_2016.csv")
+police_df_2017 <- read.csv("police_df_2017.csv")
+police_df_2018 <- read.csv("police_df_2018.csv")
+police_df_2019 <- read.csv("police_df_2019.csv")
+police_df_2020 <- read.csv("police_df_2020.csv")
+police_df_2021 <- read.csv("police_df_2021.csv")
+police_df_2022 <- read.csv("police_df_2022.csv")
 
 
 ## Function for data exploration
@@ -218,31 +250,48 @@ for (year in 2014:2022) {
 # Display the updated data frame
 print(monthly_rates_df)
 
+##
 
-####
+# Or, if plotting Total Crime Rate per 100,000 people
+
+crime_rate_over_years_plot = ggplot(monthly_rates_df, aes(x = Year, y = TotalCrimeRate)) +
+  geom_line(group=1) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Total Crime Rate per 100,000 People from 2014 to 2022",
+       x = "Year",
+       y = "Crime Rate per 100,000")
+
+print(crime_rate_over_years_plot)
+
+###
 
 # Filtering for 'Violence and sexual offences' in the 2022 data
-violence_df_2022 <- police_df_2022 %>%
+violence_df_2021 <- police_df_2021 %>%
   filter(`Crime.type` == 'Violence and sexual offences')
 
 # Summing the number of crimes per police force
-crime_counts_2022 <- violence_df_2022 %>%
+crime_counts_2021 <- violence_df_2021 %>%
   group_by(`Falls.within`) %>%
   summarise(Total_Crimes = n(), .groups = 'drop')
 
 # Renaming 'Falls.within' to 'police_force' for merging
-colnames(crime_counts_2022)[which(names(crime_counts_2022) == "Falls.within")] <- "police_force"
+colnames(crime_counts_2021)[which(names(crime_counts_2021) == "Falls.within")] <- "police_force"
 
 # Merging with the population data
-crime_rates_2022 <- merge(crime_counts_2022, police_region_pop_df, by = "police_force")
+crime_rates_2021 <- merge(crime_counts_2021, police_region_pop_df, by = "police_force")
 
 # Calculating the crime rate per 100,000 population
-crime_rates_2022 <- crime_rates_2022 %>%
+crime_rates_2021 <- crime_rates_2021 %>%
   mutate(Crime_Rate_per_100k = (Total_Crimes / population_served) * 100000)
 
 # Select only the relevant columns to display
-crime_rates_2022 <- crime_rates_2022 %>%
+crime_rates_2021 <- crime_rates_2021 %>%
   select(police_force, Total_Crimes, Crime_Rate_per_100k)
 
 # Display the results
-print(crime_rates_2022)
+print(crime_rates_2021)
+
+write.csv(crime_rates_2021,"crime_rates_2021.csv")
+
+#### Greater Manchester Police crime numbers in 2022 result in 13 and does not appear in 2021 ##
